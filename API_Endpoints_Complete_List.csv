@@ -1,0 +1,45 @@
+Category,Endpoint,Method,Purpose,Used In,Status
+Core Data,/api/masterdata,GET,Master data (periods, component codes, material types, etc.),All major pages,Active
+Core Data,/api/cm-codes,GET,Contract Manufacturer codes,SRM Dashboard, Admin SM Dashboard, Dashboard, AuditLog,Active
+Dashboard,/api/cm-dashboard/{cmCode},GET,Dashboard data for specific CM,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+SKU Management,/api/sku-details,GET,Get all SKU details,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+SKU Management,/api/sku-details,POST,Create new SKU,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+SKU Management,/api/sku-details/{skuCode},PUT,Update SKU details,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+SKU Management,/api/sku-details/add,POST,Add new SKU (alternative endpoint),SrmSkuDetail,Active
+SKU Management,/api/sku-details/update/{skuCode},PUT,Update SKU (alternative endpoint),SrmSkuDetail,Active
+SKU Management,/api/sku-details/check-exists/{skuCode},GET,Check if SKU exists,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Commented Out
+SKU Management,/api/sku/clones,POST,Clone SKU data,UploadData,Active
+SKU Management,/api/sku-approval,POST,SKU approval workflow,CmSkuDetail,Active
+SKU Reference,/api/skureference/all/{cmCode},GET,All SKU references for CM,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+SKU Reference,/api/skureference/{period}/{cmCode},GET,SKU references for specific period and CM,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+SKU Reference,/api/getskureference/{period}/{cmCode},GET,Legacy endpoint,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Commented Out
+SKU Reference,/api/getskureference/all/{cmCode},GET,Legacy endpoint,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Commented Out
+Component Management,/api/components,POST,Create/update components,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Component Management,/api/components/code-data,GET,Get component data by code,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Component Management,/api/components/skureference,POST,Get components by SKU reference,AdminCmSkuDetail, CmSkuDetail,Active
+Component Management,/api/components/filterdata-generatepdf,GET,Filter data for PDF generation,GeneratePdf,Active
+Component Management,/api/component-details/{mappingId},POST,Update component details,EditComponentModal,Active
+Component Management,/api/add-component,POST,Add new component,SrmSkuDetail,Active
+Component Management,/api/getcomponentbyskureference,POST,Get component details by SKU,SrmSkuDetail,Active
+Component Management,/api/component-code-data,GET,Legacy endpoint,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Commented Out
+Component Management,/api/get-component-code-data,GET,Legacy endpoint,SrmSkuDetail,Commented Out
+Component Detail,/api/component-details,GET,Get component details,CmGeneratePdf,Active
+Component Detail,/api/component-details-by-year-cm,GET,Get component details by year and CM,CmGeneratePdf,Active
+Component Detail,/api/sku-components-summary,GET,SKU components summary,CmGeneratePdf,Active
+SKU-Component Mapping,/api/sku-component-mappings,POST,Create/update SKU-component mappings,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Audit & Logging,/api/audit-logs,POST,Fetch audit logs with filters,AuditLog,Active
+Audit & Logging,/api/component-audit-logs/{componentId},GET,Get audit logs for specific component,AdminCmSkuDetail, SrmSkuDetail,Active
+Audit & Logging,/api/sku-auditlog,POST,Add SKU audit log entry,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Audit & Logging,/api/sku-auditlog/add,POST,Legacy endpoint,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Commented Out
+Audit & Logging,/api/add-component-audit-logs,POST,Add component audit log entry,SrmSkuDetail, CmSkuDetail,Active
+Status Management,/api/toggle-status,PATCH,Toggle status of SKUs or components,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Approval Workflow,/api/approval,POST,Send data for approval,AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Approval Workflow,/api/sendfor-approval,POST,Legacy endpoint,AdminCmSkuDetail,Commented Out
+Export & PDF,/api/export,POST,Export data (PDF generation),AdminCmSkuDetail, SrmSkuDetail, CmSkuDetail,Active
+Export & PDF,/api/stream-pdf,GET,Stream PDF from signed URL,PDF utilities,Active
+Export & PDF,/api/pdf-accesstoken,POST,Get PDF access token,SedForApproval,Active
+User Management,/api/user,POST,User authentication/registration,useSSO hook,Active
+3PM Management,/api/pm,POST,Add 3PM data,AdminSmDashboard,Active
+3PM Management,/api/addpm,POST,Add 3PM data,SrmDashboard,Active
+Signoff,/api/signoff/{cmCode}/{period},GET,Get signoff details,AdminSmDashboard, SrmDashboard,Active
+External APIs,https://graph.microsoft.com/v1.0/me,GET,Get user information for SSO,SSOButton, useSSO hook, tokenService,Active
