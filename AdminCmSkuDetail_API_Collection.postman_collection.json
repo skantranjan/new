@@ -1,0 +1,866 @@
+{
+  "info": {
+    "name": "AdminCmSkuDetail API Collection",
+    "description": "Complete API collection for AdminCmSkuDetail.tsx component",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "your_access_token_here",
+      "type": "string"
+    },
+    {
+      "key": "cm_code",
+      "value": "CM001",
+      "type": "string"
+    },
+    {
+      "key": "sku_code",
+      "value": "SKU001",
+      "type": "string"
+    },
+    {
+      "key": "component_id",
+      "value": "COMP001",
+      "type": "string"
+    },
+    {
+      "key": "period",
+      "value": "2025",
+      "type": "string"
+    },
+    {
+      "key": "request_id",
+      "value": "{{$guid}}",
+      "type": "string"
+    },
+    {
+      "key": "timestamp",
+      "value": "{{$isoTimestamp}}",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Dashboard APIs",
+      "item": [
+        {
+          "name": "Get CM Dashboard Data",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/cm-dashboard/{{cm_code}}?period={{period}}&include=skus,components,references",
+              "host": ["{{base_url}}"],
+              "path": ["cm-dashboard", "{{cm_code}}"],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "{{period}}"
+                },
+                {
+                  "key": "include",
+                  "value": "skus,components,references"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Master Data APIs",
+      "item": [
+        {
+          "name": "Get Master Data",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/masterdata",
+              "host": ["{{base_url}}"],
+              "path": ["masterdata"]
+            }
+          }
+        },
+        {
+          "name": "Get Master Data (No Auth)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/masterdata",
+              "host": ["{{base_url}}"],
+              "path": ["masterdata"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SKU APIs",
+      "item": [
+        {
+          "name": "Get All SKU Details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/sku-details",
+              "host": ["{{base_url}}"],
+              "path": ["sku-details"]
+            }
+          }
+        },
+        {
+          "name": "Create SKU",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku_data\": {\n    \"sku_code\": \"{{sku_code}}\",\n    \"sku_description\": \"Test SKU Description\",\n    \"cm_code\": \"{{cm_code}}\",\n    \"period_id\": 1,\n    \"year\": 2025,\n    \"skutype\": \"internal\",\n    \"bulk_expert\": \"bulk\",\n    \"reference_sku\": \"REF001\",\n    \"site\": \"Site1\",\n    \"contractor\": \"Contractor1\",\n    \"server\": \"Server1\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/sku-details?skutype=internal&bulk_expert=bulk",
+              "host": ["{{base_url}}"],
+              "path": ["sku-details"],
+              "query": [
+                {
+                  "key": "skutype",
+                  "value": "internal"
+                },
+                {
+                  "key": "bulk_expert",
+                  "value": "bulk"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update SKU",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku_data\": {\n    \"sku_code\": \"{{sku_code}}\",\n    \"sku_description\": \"Updated SKU Description\",\n    \"cm_code\": \"{{cm_code}}\",\n    \"period_id\": 1,\n    \"year\": 2025,\n    \"skutype\": \"internal\",\n    \"bulk_expert\": \"bulk\",\n    \"reference_sku\": \"REF001\",\n    \"site\": \"Site1\",\n    \"contractor\": \"Contractor1\",\n    \"server\": \"Server1\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/sku-details/{{sku_code}}",
+              "host": ["{{base_url}}"],
+              "path": ["sku-details", "{{sku_code}}"]
+            }
+          }
+        },
+        {
+          "name": "Toggle SKU Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"sku\",\n  \"id\": \"{{sku_code}}\",\n  \"is_active\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/toggle-status",
+              "host": ["{{base_url}}"],
+              "path": ["toggle-status"]
+            }
+          }
+        },
+        {
+          "name": "Add SKU Audit Log",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku_code\": \"{{sku_code}}\",\n  \"sku_description\": \"Test SKU Description\",\n  \"cm_code\": \"{{cm_code}}\",\n  \"action\": \"created\",\n  \"user_id\": \"user123\",\n  \"timestamp\": \"{{timestamp}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/sku-auditlog",
+              "host": ["{{base_url}}"],
+              "path": ["sku-auditlog"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SKU Reference APIs",
+      "item": [
+        {
+          "name": "Get All SKU References",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/skureference/all/{{cm_code}}",
+              "host": ["{{base_url}}"],
+              "path": ["skureference", "all", "{{cm_code}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Period SKU References",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/skureference/{{period}}/{{cm_code}}",
+              "host": ["{{base_url}}"],
+              "path": ["skureference", "{{period}}", "{{cm_code}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SKU Component Mapping APIs",
+      "item": [
+        {
+          "name": "Search SKU Component Mappings",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cm_code\": \"{{cm_code}}\",\n  \"sku_code\": \"{{sku_code}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/sku-component-mappings",
+              "host": ["{{base_url}}"],
+              "path": ["sku-component-mappings"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Component APIs",
+      "item": [
+        {
+          "name": "Create Component",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "sku_code",
+                  "value": "{{sku_code}}",
+                  "type": "text"
+                },
+                {
+                  "key": "component_code",
+                  "value": "COMP001",
+                  "type": "text"
+                },
+                {
+                  "key": "component_type",
+                  "value": "packaging",
+                  "type": "text"
+                },
+                {
+                  "key": "component_description",
+                  "value": "Test Component Description",
+                  "type": "text"
+                },
+                {
+                  "key": "component_base_uom_id",
+                  "value": "kg",
+                  "type": "text"
+                },
+                {
+                  "key": "percent_w_w",
+                  "value": "10.5",
+                  "type": "text"
+                },
+                {
+                  "key": "evidence",
+                  "value": "Test Evidence",
+                  "type": "text"
+                },
+                {
+                  "key": "evidence_files",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/components",
+              "host": ["{{base_url}}"],
+              "path": ["components"]
+            }
+          }
+        },
+        {
+          "name": "Get Component Code Data",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/components/code-data?component_code={{component_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["components", "code-data"],
+              "query": [
+                {
+                  "key": "component_code",
+                  "value": "{{component_id}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Component SKU References",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku_code\": \"{{sku_code}}\",\n  \"component_code\": \"{{component_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/components/skureference",
+              "host": ["{{base_url}}"],
+              "path": ["components", "skureference"]
+            }
+          }
+        },
+        {
+          "name": "Toggle Component Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"component\",\n  \"id\": \"{{component_id}}\",\n  \"is_active\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/toggle-status",
+              "host": ["{{base_url}}"],
+              "path": ["toggle-status"]
+            }
+          }
+        },
+        {
+          "name": "Get Component Audit Logs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/component-audit-logs/{{component_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["component-audit-logs", "{{component_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Export APIs",
+      "item": [
+        {
+          "name": "Export Data to Excel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cm_code\": \"{{cm_code}}\",\n  \"period\": \"{{period}}\",\n  \"export_type\": \"sku\",\n  \"filters\": {\n    \"sku_codes\": [],\n    \"sku_descriptions\": [],\n    \"component_codes\": [],\n    \"component_descriptions\": [],\n    \"is_active\": null\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/export",
+              "host": ["{{base_url}}"],
+              "path": ["export"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Approval APIs",
+      "item": [
+        {
+          "name": "Send for Approval",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{request_id}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cm_code\": \"{{cm_code}}\",\n  \"approval_type\": \"sku\",\n  \"items\": [\"{{sku_code}}\"],\n  \"comments\": \"Please approve this SKU\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/approval",
+              "host": ["{{base_url}}"],
+              "path": ["approval"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
