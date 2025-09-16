@@ -1,0 +1,71 @@
+-- Table: public.sdp_sku_component_mapping_details_auditlog
+
+-- DROP TABLE IF EXISTS public.sdp_sku_component_mapping_details_auditlog;
+
+CREATE TABLE IF NOT EXISTS public.sdp_sku_component_mapping_details_auditlog
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    cm_code character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    sku_code character varying(250) COLLATE pg_catalog."default" NOT NULL,
+    component_code character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    version integer NOT NULL,
+    component_packaging_type_id character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    period_id integer NOT NULL,
+    component_valid_from timestamp without time zone NOT NULL,
+    component_valid_to timestamp without time zone NOT NULL,
+    created_by character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    is_active boolean DEFAULT true,
+    action_type character varying(50) COLLATE pg_catalog."default",
+    action_reason character varying(255) COLLATE pg_catalog."default",
+    old_values text COLLATE pg_catalog."default",
+    new_values text COLLATE pg_catalog."default",
+    change_summary text COLLATE pg_catalog."default",
+    changed_by character varying(255) COLLATE pg_catalog."default",
+    changed_at character varying(255) COLLATE pg_catalog."default",
+    componentvaliditydatefrom date,
+    componentvaliditydateto date,
+    componentid integer,
+    CONSTRAINT sdp_sku_component_mapping_details_auditlog_pkey PRIMARY KEY (cm_code, sku_code, component_code, version, component_packaging_type_id, period_id, component_valid_from, component_valid_to),
+    CONSTRAINT fk_summary_period FOREIGN KEY (period_id)
+        REFERENCES public.sdp_period (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+    CONSTRAINT ssdp_sku_component_mapping_details_auditlog_version_check CHECK (version > 0)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.sdp_sku_component_mapping_details_auditlog
+    OWNER to sdptl_user;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT id, sku_code, formulation_reference, material_type_id, components_reference, component_code, component_description, component_valid_from, component_valid_to, component_material_group, component_quantity, component_uom_id, component_base_quantity, component_base_uom_id, percent_w_w, evidence, component_packaging_type_id, component_packaging_material, helper_column, component_unit_weight, weight_unit_measure_id, percent_mechanical_pcr_content, percent_mechanical_pir_content, percent_chemical_recycled_content, percent_bio_sourced, material_structure_multimaterials, component_packaging_color_opacity, component_packaging_level_id, component_dimensions, packaging_specification_evidence, evidence_of_recycled_or_bio_source, last_update_date, category_entry_id, data_verification_entry_id, user_id, signed_off_by, signed_off_date, mandatory_fields_completion_status, evidence_provided, document_status, is_active, created_by, created_date, year, component_unit_weight_id, cm_code, period_id, periods, component_id, version, componentvaliditydatefrom, componentvaliditydateto
+	FROM public.sdp_component_details_auditlog;
