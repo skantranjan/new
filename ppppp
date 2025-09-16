@@ -1,0 +1,9 @@
+Error fetching component audit log by component ID: error: CASE types timestamp without time zone and character varying cannot be matched
+    at /usr/src/app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getComponentAuditLogByComponentId (/usr/src/app/models/model.getComponentAuditLogByComponentId.js:187:18)
+    at async Object.getComponentAuditLogByComponentIdHandler (/usr/src/app/controllers/controller.getComponentAuditLogByComponentId.js:90:26) {
+  length: 154,
+  severity: 'ERROR',
+  code: '42804',
+  detail: undefined,
